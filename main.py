@@ -1,5 +1,6 @@
 import argparse
 import time
+import os
 
 from src.parse_json import *  
 #from src.visual import visualize_graph
@@ -50,8 +51,8 @@ def main():
     # if args.plot:
     #     visualize_graph(inserter.graph, save_path="")
     #     return
-    
-    out_file = args.test_file.replace('.json', '_out.json')
+    input_filename = os.path.basename(args.test_file)
+    out_file = input_filename.replace('.json', '_out.json')
     save_graph_to_json(inserter.graph, out_file)
 
 
